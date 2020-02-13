@@ -5,6 +5,43 @@ import org.junit.jupiter.api.Test;
 
 public class SneakerTest {
 
+    @Test // (1)
+    public void constructorTest(){
+
+        // (2)
+        int expectedId = 6;
+        String expectedName = "Stan Smith";
+        String expectedBrand = "Adidas";
+        String expectedSport = "Tennnis";
+        int expectedQty = 10;
+        float expectedPrice = 80.00f;
+
+        // (3)
+        Sneaker testSneaker = new Sneaker(expectedId, expectedName, expectedBrand,
+                expectedSport, expectedQty,expectedPrice);
+
+        // (4)
+        Assertions.assertEquals(expectedId, testSneaker.getID());
+        Assertions.assertEquals(expectedName, testSneaker.getName());
+        Assertions.assertEquals(expectedBrand, testSneaker.getBrand());
+        Assertions.assertEquals(expectedSport, testSneaker.getSport());
+        Assertions.assertEquals(expectedQty, testSneaker.getQuantity());
+        Assertions.assertEquals(expectedPrice, testSneaker.getPrice());
+    }
+
+    @Test
+    public void setIdTest() {
+        // given (1)
+        int expected = 6;
+
+        // when (2)
+        Sneaker testSneaker = new Sneaker();
+        testSneaker.setId(expected);
+
+        // then (3)
+        Assertions.assertEquals(expected, testSneaker.getID());
+    }
+
     @Test
     public void setNameTest() {
         // given (1)
