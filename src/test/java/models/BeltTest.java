@@ -12,19 +12,18 @@ public class BeltTest {
     int expectedSize = 28;
     float expectedPrice = 20.0f;
 
-    Belt testBelt = new Belt();
+    Belt testBelt = new Belt(expectedBrand, expectedBuckle, expectedColor,
+            expectedSize, expectedPrice);
 
     @Test
     public void constructorTest(){
 
-        Belt test2Belt = new Belt(expectedBrand, expectedBuckle, expectedColor,
-                expectedSize, expectedPrice);
 
-        Assertions.assertEquals(expectedBrand, test2Belt.getBrand());
-        Assertions.assertEquals(expectedBuckle, test2Belt.getBuckle());
-        Assertions.assertEquals(expectedColor, test2Belt.getColor());
-        Assertions.assertEquals(expectedSize, test2Belt.getSize());
-        Assertions.assertEquals(expectedPrice, test2Belt.getPrice());
+        Assertions.assertEquals(expectedBrand, testBelt.getBrand());
+        Assertions.assertEquals(expectedBuckle, testBelt.getBuckle());
+        Assertions.assertEquals(expectedColor, testBelt.getColor());
+        Assertions.assertEquals(expectedSize, testBelt.getSize());
+        Assertions.assertEquals(expectedPrice, testBelt.getPrice());
     }
 
     @Test
