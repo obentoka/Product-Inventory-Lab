@@ -15,6 +15,19 @@ public class BeltTest {
     Belt testBelt = new Belt();
 
     @Test
+    public void constructorTest(){
+
+        Belt test2Belt = new Belt(expectedBrand, expectedBuckle, expectedColor,
+                expectedSize, expectedPrice);
+
+        Assertions.assertEquals(expectedBrand, test2Belt.getBrand());
+        Assertions.assertEquals(expectedBuckle, test2Belt.getBuckle());
+        Assertions.assertEquals(expectedColor, test2Belt.getColor());
+        Assertions.assertEquals(expectedSize, test2Belt.getSize());
+        Assertions.assertEquals(expectedPrice, test2Belt.getPrice());
+    }
+
+    @Test
     public void setBrandTest(){
         testBelt.setBrand(expectedBrand);
         Assertions.assertEquals(expectedBrand, testBelt.getBrand());

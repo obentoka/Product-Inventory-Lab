@@ -11,6 +11,14 @@ public class Belt {
     public Belt() {
     }
 
+    public Belt(String brand, String buckle, String color, int size, float price){
+        this.brand = brand;
+        this.buckle = buckle;
+        this.color = color;
+        this.size = size;
+        this.price = price;
+    }
+
     public void setBrand(String brand){
         this.brand = brand;
     }
