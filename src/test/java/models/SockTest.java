@@ -5,18 +5,32 @@ import org.junit.jupiter.api.Test;
 
 public class SockTest {
 
+    int expectedId = 0;
     String expectedBrand = "Nike";
     String expectedSport = "Football";
     String expectedMaterial = "Cotton";
     String expectedColor = "White";
     char expectedSize = 'M';
-    Sock testSock = new Sock(expectedBrand, expectedSport, expectedMaterial,
+
+    Sock testSock = new Sock(expectedId, expectedBrand, expectedSport, expectedMaterial,
             expectedColor, expectedSize);
+
+    @Test
+    public void constructorTest1(){
+        Sock test = new Sock();
+        Assertions.assertNull(test.getId());
+        Assertions.assertNull(test.getBrand());
+        Assertions.assertNull(test.getSport());
+        Assertions.assertNull(test.getMaterial());
+        Assertions.assertNull(test.getColor());
+        Assertions.assertNull(test.getSize());
+    }
+
     @Test
     public void constructorTest(){
 
         Assertions.assertEquals(expectedBrand, testSock.getBrand());
-        Assertions.assertEquals(expectedColor, testSock.getSport());
+        Assertions.assertEquals(expectedSport, testSock.getSport());
         Assertions.assertEquals(expectedMaterial, testSock.getMaterial());
         Assertions.assertEquals(expectedColor, testSock.getColor());
         Assertions.assertEquals(expectedSize, testSock.getSize());
@@ -58,7 +72,7 @@ public class SockTest {
     }
     @Test
     public void getColorTest(){
-        testSock.setColor(expectedSport);
+        testSock.setColor(expectedColor);
         Assertions.assertEquals(expectedColor, testSock.getColor());
     }
     @Test
@@ -70,6 +84,17 @@ public class SockTest {
     public void getSizeTest(){
         testSock.setSize(expectedSize);
         Assertions.assertEquals(expectedSize, testSock.getSize());
+    }
+
+    @Test
+    public void setIdTest(){
+        testSock.setId(expectedId);
+        Assertions.assertEquals(expectedId, testSock.getId());
+    }
+    @Test
+    public void getIdTest(){
+        testSock.setId(expectedId);
+        Assertions.assertEquals(expectedId, testSock.getId());
     }
 
 }

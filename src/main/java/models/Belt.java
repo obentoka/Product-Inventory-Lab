@@ -2,16 +2,24 @@ package models;
 
 public class Belt {
 
+    private Integer id;
     private String brand;
     private String buckle;
     private String color;
-    private int size;
-    private float price;
+    private Integer size;
+    private Float price;
 
     public Belt() {
+        id = null;
+        brand = null;
+        buckle = null;
+        color = null;
+        size = null;
+        price = null;
     }
 
-    public Belt(String brand, String buckle, String color, int size, float price){
+    public Belt(Integer id, String brand, String buckle, String color, Integer size, Float price){
+        this.id  = id;
         this.brand = brand;
         this.buckle = buckle;
         this.color = color;
@@ -43,7 +51,7 @@ public class Belt {
         this.color = color;
     }
 
-    public int getSize() {
+    public Integer getSize() {
         return size;
     }
 
@@ -51,11 +59,19 @@ public class Belt {
         this.size = size;
     }
 
-    public float getPrice() {
+    public Float getPrice() {
         return price;
     }
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

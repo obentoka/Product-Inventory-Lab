@@ -2,16 +2,24 @@ package models;
 
 public class Sock {
 
+    private Integer id;
     private String brand;
     private String sport;
     private String material;
     private String color;
-    private char size;
+    private Character size;
 
     public Sock() {
+        id = null;
+        brand = null;
+        sport = null;
+        material = null;
+        color = null;
+        size = null;
     }
 
-    public Sock(String brand, String sport, String material, String color, char size){
+    public Sock(Integer id, String brand, String sport, String material, String color, Character size){
+        this.id  = id;
         this.brand = brand;
         this.sport = sport;
         this.material = material;
@@ -51,7 +59,7 @@ public class Sock {
         this.color = color;
     }
 
-    public char getSize() {
+    public Character getSize() {
         return this.size;
     }
 
@@ -59,4 +67,11 @@ public class Sock {
         this.size = size;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
