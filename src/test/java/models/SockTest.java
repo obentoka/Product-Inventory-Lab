@@ -27,7 +27,7 @@ public class SockTest {
     }
 
     @Test
-    public void constructorTest(){
+    public void constructorTest2(){
 
         Assertions.assertEquals(expectedBrand, testSock.getBrand());
         Assertions.assertEquals(expectedSport, testSock.getSport());
@@ -35,6 +35,26 @@ public class SockTest {
         Assertions.assertEquals(expectedColor, testSock.getColor());
         Assertions.assertEquals(expectedSize, testSock.getSize());
     }
+
+    @Test
+    public void constructorTest3(){
+        Sock test = Sock.SockBuilder.newInstance()
+                .setBrand("Nike")
+                .setSport("Football")
+                .setId(0)
+                .setMaterial("Cotton")
+                .setColor("White")
+                .setSize('M')
+                .build();
+
+        Assertions.assertEquals(expectedId, test.getId());
+        Assertions.assertEquals(expectedBrand, test.getBrand());
+        Assertions.assertEquals(expectedSport, test.getSport());
+        Assertions.assertEquals(expectedMaterial, test.getMaterial());
+        Assertions.assertEquals(expectedColor, test.getColor());
+        Assertions.assertEquals(expectedSize, test.getSize());
+    }
+
     @Test
     public void setBrandTest(){
         testSock.setBrand(expectedBrand);

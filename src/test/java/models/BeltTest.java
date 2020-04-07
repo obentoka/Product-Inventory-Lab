@@ -28,7 +28,6 @@ public class BeltTest {
 
     @Test
     public void constructorTest2(){
-
         Assertions.assertEquals(expectedId, testBelt.getId());
         Assertions.assertEquals(expectedBrand, testBelt.getBrand());
         Assertions.assertEquals(expectedBuckle, testBelt.getBuckle());
@@ -36,6 +35,26 @@ public class BeltTest {
         Assertions.assertEquals(expectedSize, testBelt.getSize());
         Assertions.assertEquals(expectedPrice, testBelt.getPrice());
     }
+
+    @Test
+    public void constructorTest3(){
+        Belt test = Belt.BeltBuilder.newInstance()
+                .setBrand("Levi")
+                .setColor("Brown")
+                .setId(0)
+                .setPrice(20.0f)
+                .setBuckle("Clamp")
+                .setSize(28)
+                .build();
+
+        Assertions.assertEquals(expectedId, test.getId());
+        Assertions.assertEquals(expectedBrand, test.getBrand());
+        Assertions.assertEquals(expectedBuckle, test.getBuckle());
+        Assertions.assertEquals(expectedColor, test.getColor());
+        Assertions.assertEquals(expectedSize, test.getSize());
+        Assertions.assertEquals(expectedPrice, test.getPrice());
+    }
+
 
     @Test
     public void setBrandTest(){
